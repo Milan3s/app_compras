@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane fx:id="carritoRoot" prefHeight="1163.0" prefWidth="1135.0" styleClass="carrito-root" stylesheets="@../styles/carrito.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.CarritoController">
+
+    <!-- 🔹 Encabezado -->
+    <VBox fx:id="headerCarrito" alignment="CENTER" layoutY="20.0" prefHeight="118.0" prefWidth="1135.0" spacing="5.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="20.0">
+        <Label fx:id="labelTituloCarrito" styleClass="carrito-title" text="Carrito de Compras" />
+        <Label fx:id="labelUsuarioActivo" styleClass="carrito-user" text="Invitado" />
+    </VBox>
+
+    <!-- 🔹 Nombre de la compra -->
+    <HBox fx:id="hboxNombreCompra" layoutX="33.0" layoutY="135.0" spacing="10">
+        <Label fx:id="labelNombreCompra" prefHeight="34.0" prefWidth="139.0" styleClass="carrito-label" text="Nombre de la compra:" />
+        <TextField fx:id="txtNombreCompra" prefHeight="33.0" prefWidth="350.0" promptText="Ej: Compra semanal del hogar" styleClass="carrito-textfield" />
+        <Button fx:id="btnGuardarNombreCompra" onAction="#guardarNombreCompra" styleClass="carrito-button-primary" text="Guardar nombre" />
+    </HBox>
+
+    <!-- 🔹 Selección de tienda -->
+    <HBox fx:id="hboxTienda" layoutX="33.0" layoutY="180.0" prefHeight="36.0" prefWidth="383.0" spacing="10">
+        <Label fx:id="labelTienda" alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="47.0" prefWidth="75.0" styleClass="carrito-label" text="Tienda:" textAlignment="RIGHT" />
+        <ComboBox fx:id="comboTiendas" onAction="#tiendaSeleccionada" prefHeight="33.0" prefWidth="305.0" promptText="Selecciona una tienda" styleClass="carrito-combo" />
+    </HBox>
+
+    <!-- 🔹 Producto -->
+    <HBox fx:id="hboxProducto" layoutX="33.0" layoutY="220.0" prefHeight="34.0" prefWidth="383.0" spacing="15">
+        <Label fx:id="labelProducto" alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="34.0" prefWidth="78.0" styleClass="carrito-label" text="Producto:" />
+        <ComboBox fx:id="comboProductos" prefHeight="33.0" prefWidth="311.0" promptText="Selecciona un producto" styleClass="carrito-combo" />
+    </HBox>
+
+    <!-- 🔹 Cantidad -->
+    <Label fx:id="labelCantidad" layoutX="451.0" layoutY="220.0" prefHeight="32.0" prefWidth="63.0" styleClass="carrito-label" text="Cantidad:" />
+    <Spinner fx:id="spinnerCantidad" editable="true" layoutX="525.0" layoutY="220.0" prefHeight="27.0" prefWidth="204.0" styleClass="carrito-spinner" />
+
+    <!-- 🔹 Añadir al carrito -->
+    <Button fx:id="btnAgregar" layoutX="764.0" layoutY="218.0" onAction="#agregarProducto" styleClass="carrito-button-primary" text="Añadir al Carrito" />
+
+    <!-- 🔹 Búsqueda -->
+    <TextField fx:id="txtBuscarProducto" layoutX="33.0" layoutY="286.0" prefHeight="38.0" prefWidth="1060.0" promptText="Buscar producto en el carrito..." styleClass="carrito-search" />
+
+    <!-- 🔹 Tabla -->
+    <TableView fx:id="tablaCarrito" layoutX="34.0" layoutY="352.0" prefHeight="420.0" prefWidth="1066.0" styleClass="carrito-table">
+        <columns>
+            <TableColumn fx:id="colNombreCompra" prefWidth="200.0" text="Nombre de Compra" />
+            <TableColumn fx:id="colProducto" prefWidth="200.0" text="Producto" />
+            <TableColumn fx:id="colPrecio" prefWidth="150.0" text="Precio (€)" />
+            <TableColumn fx:id="colCantidad" prefWidth="150.0" text="Cantidad" />
+            <TableColumn fx:id="colSubtotal" prefWidth="150.0" text="Subtotal (€)" />
+            <TableColumn fx:id="colFecha" prefWidth="200.0" text="Fecha Agregado" />
+        </columns>
+    </TableView>
+
+    <!-- 🔹 Total -->
+    <HBox fx:id="hboxTotal" layoutX="525.0" layoutY="822.0" spacing="10">
+        <Label fx:id="labelTotalTexto" styleClass="carrito-total-text" text="Total:" />
+        <Label fx:id="labelTotal" styleClass="carrito-total-value" text="0.00 €" />
+    </HBox>
+
+    <!-- 🔹 Mensaje -->
+    <Label fx:id="labelMensaje" alignment="CENTER" layoutX="342.0" layoutY="874.0" prefHeight="38.0" prefWidth="473.0" styleClass="carrito-message" text="" />
+
+    <!-- 🔹 Bloque de botones reorganizado -->
+    <VBox fx:id="vboxBotones" alignment="CENTER" layoutX="289.0" layoutY="950.0" prefWidth="560.0" spacing="15">
+        <children>
+
+            <!-- Primera fila: acciones de gestión -->
+            <HBox fx:id="hboxBotonesFila1" alignment="CENTER" spacing="15">
+                <children>
+                    <Button fx:id="btnGuardarCompraTemporalmente" onAction="#accion_guardar_compra_temporalmente" prefHeight="38.0" prefWidth="318.0" styleClass="carrito-button-success" text="Guardar compra temporalmente" />
+                    <Button fx:id="btnQuitar" onAction="#quitarProductoSeleccionado" prefHeight="38.0" prefWidth="235.0" styleClass="carrito-button-warning" text="Quitar producto" />
+                    <Button fx:id="btnVaciar" onAction="#vaciarCarrito" prefHeight="38.0" prefWidth="235.0" styleClass="carrito-button-danger" text="Vaciar Carrito" />
+                </children>
+            </HBox>
+
+            <!-- Segunda fila: acciones finales -->
+            <HBox fx:id="hboxBotonesFila2" alignment="CENTER" spacing="15">
+                <children>
+                    <Button fx:id="btnConfirmar1" onAction="#confirmarCompra" prefHeight="38.0" prefWidth="235.0" styleClass="carrito-button-success" text="Confirmar Compra" />
+                    <Button fx:id="btnImprimirTicketDeCompra" onAction="#accion_imprimir_ticket_de_compra" prefHeight="38.0" prefWidth="235.0" styleClass="carrito-button-ticket" text="Imprimir ticket de compra" />
+                </children>
+            </HBox>
+
+        </children>
+    </VBox>
+
+    <!-- 🔹 Volver -->
+    <Button fx:id="btnVolver" layoutX="491.0" layoutY="1096.0" onAction="#volverDashboard" styleClass="carrito-button-secondary" text="Volver al Dashboard" />
+
+</AnchorPane>

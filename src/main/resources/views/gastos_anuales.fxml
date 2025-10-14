@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="gastosAnualesRoot" prefHeight="889.0" prefWidth="899.0" styleClass="gastos-anuales-root" stylesheets="@../styles/gastos_anuales.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.GastosAnualesController">
+
+    <!-- 🔹 CABECERA -->
+    <HBox fx:id="headerGastosAnuales" alignment="CENTER" spacing="10.0" styleClass="gastos-anuales-header" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0">
+        <ImageView fx:id="iconoGastosAnuales" fitHeight="40.0" fitWidth="40.0" preserveRatio="true" styleClass="gastos-anuales-icon">
+            <image>
+                <Image url="@../iconos/monedero.png" />
+            </image>
+        </ImageView>
+        <Label fx:id="labelTituloGastosAnuales" styleClass="gastos-anuales-title" text="Reporte de Gastos Anuales" />
+    </HBox>
+
+    <!-- 🔹 SEPARADOR SUPERIOR -->
+    <Separator fx:id="separatorTopGastosAnuales" layoutX="12.0" layoutY="87.0" prefWidth="860.0" styleClass="gastos-anuales-separator" />
+
+    <!-- 🔹 DESCRIPCIÓN -->
+    <Text fx:id="textoDescripcionGastosAnuales" layoutX="20.0" layoutY="120.0" styleClass="gastos-anuales-description" text="Consulta los gastos totales por año. Introduce un año o selecciona un usuario para filtrar los resultados y ver el gasto anual. Si la vista SQL no existe, puedes crearla con el botón inferior." wrappingWidth="860.0" />
+
+    <!-- 🔹 FILTROS -->
+    <HBox fx:id="filtrosGastosAnuales" alignment="CENTER_LEFT" layoutX="20.0" layoutY="151.0" prefHeight="47.0" prefWidth="860.0" spacing="20.0" styleClass="gastos-anuales-filters">
+        <Text fx:id="labelFiltroAnioGastosAnuales" styleClass="gastos-anuales-filter-label" text="Año:" />
+        <TextField fx:id="txtAnioGastosAnuales" prefHeight="25.0" prefWidth="120.0" promptText="Ejemplo: 2025" styleClass="gastos-anuales-input" />
+        <Text fx:id="labelFiltroUsuarioGastosAnuales" styleClass="gastos-anuales-filter-label" text="Usuario:" />
+        <ComboBox fx:id="comboUsuariosGastosAnuales" prefHeight="25.0" prefWidth="200.0" promptText="Selecciona usuario" styleClass="gastos-anuales-combobox" />
+
+    </HBox>
+
+    <!-- 🔹 SEPARADOR MEDIO -->
+    <Separator fx:id="separatorMiddleGastosAnuales" layoutX="15.0" layoutY="210.0" prefWidth="860.0" styleClass="gastos-anuales-separator" />
+
+    <!-- 🔹 BOTONES DE ACCIÓN -->
+    <HBox fx:id="accionesGastosAnuales" alignment="CENTER_LEFT" layoutX="20.0" layoutY="231.0" spacing="10.0" styleClass="gastos-anuales-actions">
+        <Button fx:id="btnCrearVistaGastosAnuales" styleClass="gastos-anuales-button-primary" text="Crear vista de gastos anuales" />
+        <Button fx:id="btnCargarVistaGastosAnuales" styleClass="gastos-anuales-button-secondary" text="Cargar datos de la vista anual" />
+        <Button fx:id="btnRefrescarGastosAnuales" onAction="#accion_RefrescarGastosAnuales" styleClass="gastos-anuales-button-success" text="Refrescar datos anuales" />
+      <Button fx:id="btnImprimirGastosAnuales1" styleClass="gastos-anuales-button-success" text="Imprimir reporte anual" />
+    </HBox>
+
+    <!-- 🔹 LABEL DE ESTADO -->
+    <Label fx:id="labelEstadoGastosAnuales" layoutX="20.0" layoutY="276.0" prefHeight="25.0" prefWidth="609.0" styleClass="gastos-anuales-status" text="" />
+
+    <!-- 🔹 SEPARADOR INTERMEDIO -->
+    <Separator fx:id="separatorMiddleGastosAnuales1" layoutX="14.0" layoutY="311.0" prefWidth="860.0" styleClass="gastos-anuales-separator" />
+
+    <!-- 🔹 TABLA DE RESULTADOS -->
+    <TableView fx:id="tablaGastosAnuales" layoutX="14.0" layoutY="350.0" prefHeight="370.0" prefWidth="860.0" styleClass="gastos-anuales-table">
+        <columns>
+            <TableColumn fx:id="colGastosUsuarioAnual" prefWidth="350.0" styleClass="gastos-anuales-col" text="Usuario" />
+            <TableColumn fx:id="colGastosAnio" prefWidth="200.0" styleClass="gastos-anuales-col" text="Año" />
+            <TableColumn fx:id="colGastosTotalAnual" prefWidth="310.0" styleClass="gastos-anuales-col" text="Gasto Total (€)" />
+        </columns>
+    </TableView>
+
+    <!-- 🔹 INFORMACIÓN DE REGISTROS -->
+    <Label fx:id="labelRegistrosGastosAnuales" alignment="CENTER" layoutX="247.0" layoutY="737.0" prefHeight="47.0" prefWidth="395.0" styleClass="gastos-anuales-info" text="Registros cargados: 0" />
+
+    <!-- 🔹 BOTÓN VOLVER -->
+    <HBox fx:id="volverDashboardGastosAnuales" alignment="CENTER" layoutX="1.0" layoutY="712.0" styleClass="gastos-anuales-footer" AnchorPane.bottomAnchor="28.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="-1.0">
+        <Button fx:id="btnVolverDashboardGastosAnuales" onAction="#accion_volver_al_dashboard" styleClass="gastos-anuales-button-exit" text="Volver al Dashboard" />
+    </HBox>
+
+</AnchorPane>

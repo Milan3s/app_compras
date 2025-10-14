@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane fx:id="categoriasRoot" prefHeight="881.0" prefWidth="920.0" styleClass="categorias-root" stylesheets="@../styles/categorias.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.CategoriasController">
+
+    <!-- 🔹 Encabezado centrado con VBox -->
+    <VBox fx:id="headerCategorias" alignment="CENTER" layoutY="20.0" prefHeight="79.0" prefWidth="920.0" spacing="5.0" styleClass="categoria-header" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="20.0">
+        <Label fx:id="labelTituloCategorias" styleClass="categoria-title" text="Gestión de Categorías" />
+        <Label fx:id="labelUsuarioActivo" styleClass="categoria-user" text="Usuario" />
+    </VBox>
+
+    <!-- 🔹 Formulario -->
+    <Label fx:id="labelNombre" layoutX="279.0" layoutY="114.0" styleClass="categoria-label" text="Nombre:" />
+    <TextField fx:id="txtNombre" layoutX="389.0" layoutY="109.0" prefWidth="300.0" promptText="Nombre de la categoría" styleClass="categoria-input" />
+
+    <Label fx:id="labelDescripcion" layoutX="279.0" layoutY="154.0" styleClass="categoria-label" text="Descripción:" />
+    <TextField fx:id="txtDescripcion" layoutX="389.0" layoutY="149.0" prefWidth="300.0" promptText="Descripción breve" styleClass="categoria-input" />
+
+    <!-- 🔹 Botones CRUD -->
+    <HBox fx:id="hboxBotonesCRUD" layoutX="302.0" layoutY="202.0" spacing="10.0">
+        <children>
+            <Button fx:id="btnAgregar" onAction="#agregarCategoria" styleClass="categoria-button-success" text="Agregar" />
+            <Button fx:id="btnActualizar" onAction="#actualizarCategoria" styleClass="categoria-button-warning" text="Actualizar" />
+            <Button fx:id="btnEliminar" onAction="#eliminarCategoria" styleClass="categoria-button-danger" text="Eliminar" />
+            <Button fx:id="btnLimpiar" onAction="#limpiarFormulario" styleClass="categoria-button-secondary" text="Limpiar" />
+        </children>
+    </HBox>
+
+    <!-- 🔍 Buscador -->
+    <TextField fx:id="txtBuscarCategoria" layoutX="52.0" layoutY="268.0" prefHeight="38.0" prefWidth="817.0" promptText="Buscar categorías" styleClass="categoria-search" />
+
+    <!-- 📋 Tabla de categorías -->
+    <TableView fx:id="tablaCategorias" layoutX="52.0" layoutY="327.0" prefHeight="383.0" prefWidth="817.0" styleClass="categoria-table">
+        <columns>
+            <TableColumn fx:id="colId" prefWidth="60.0" styleClass="categoria-table-col" text="ID" />
+            <TableColumn fx:id="colNombre" prefWidth="260.0" styleClass="categoria-table-col" text="Nombre" />
+            <TableColumn fx:id="colDescripcion" prefWidth="497.0" styleClass="categoria-table-col" text="Descripción" />
+        </columns>
+    </TableView>
+
+    <!-- 💬 Mensaje -->
+    <Label fx:id="labelMensaje" alignment="CENTER" layoutX="218.0" layoutY="741.0" prefHeight="38.0" prefWidth="484.0" styleClass="categoria-message" text="" />
+
+    <!-- ↩️ Botón volver -->
+    <Button fx:id="btnVolver" layoutX="382.0" layoutY="800.0" onAction="#volverDashboard" styleClass="categoria-button-primary" text="Volver al Dashboard" />
+
+</AnchorPane>

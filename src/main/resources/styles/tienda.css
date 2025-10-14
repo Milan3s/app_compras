@@ -1,0 +1,201 @@
+/* =========================================================
+ 🎨 ESTILOS GENERALES DE LA VISTA TIENDA
+========================================================= */
+
+/* 🧱 Fondo general */
+.tienda-root {
+    -fx-background-color: #f9f9f9;
+    -fx-font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* =========================================================
+ 🏷️ CABECERA Y ETIQUETAS
+========================================================= */
+
+/* Título principal */
+.tienda-title {
+    -fx-font-size: 26px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #000000;
+}
+
+/* Usuario activo */
+.tienda-user {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2980b9;
+}
+
+/* Etiquetas del formulario */
+.tienda-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #2c3e50;
+}
+
+/* =========================================================
+ 🧩 CAMPOS DE TEXTO Y BUSCADOR
+========================================================= */
+
+/* Campos de texto */
+.tienda-input {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-padding: 6 10;
+    -fx-font-size: 14px;
+}
+
+.tienda-input:focused {
+    -fx-border-color: #2980b9;
+    -fx-effect: dropshadow(gaussian, rgba(41,128,185,0.25), 5, 0, 0, 1);
+}
+
+/* Campo de búsqueda */
+.tienda-search {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-font-size: 14px;
+    -fx-padding: 6 10;
+}
+
+/* =========================================================
+ 📦 TABLA DE TIENDAS (IGUAL ESTILO QUE CARRITO)
+========================================================= */
+
+.tienda-table {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #dddddd;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-padding: 0;
+    -fx-table-cell-border-color: #eeeeee;
+    -fx-table-header-border-color: #cccccc;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 6, 0, 0, 2);
+}
+
+/* Cabecera de la tabla */
+.tienda-table .column-header-background {
+    -fx-background-color: linear-gradient(to bottom, #f4f4f4, #eaeaea);
+    -fx-background-radius: 8 8 0 0;
+    -fx-border-radius: 8 8 0 0;
+}
+
+/* Texto de cabeceras */
+.tienda-table .column-header,
+.tienda-table .filler {
+    -fx-size: 40px;
+    -fx-border-color: transparent transparent #cccccc transparent;
+    -fx-alignment: CENTER;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-text-fill: #2c3e50;
+    -fx-padding: 8 0;
+}
+
+/* Celdas */
+.tienda-table .table-cell {
+    -fx-alignment: CENTER;
+    -fx-text-fill: #000000;
+    -fx-font-size: 14px;
+    -fx-padding: 6 0;
+    -fx-background-color: transparent;
+}
+
+/* Filas alternas */
+.tienda-table .table-row-cell:odd {
+    -fx-background-color: #fafafa;
+}
+.tienda-table .table-row-cell:even {
+    -fx-background-color: #ffffff;
+}
+
+/* Efecto hover */
+.tienda-table .table-row-cell:hover {
+    -fx-background-color: #ecf6ff;
+}
+
+/* Fila seleccionada */
+.tienda-table .table-row-cell:filled:selected {
+    -fx-background-color: #d0e6ff;
+    -fx-text-fill: #000;
+}
+
+/* Quitar scroll lateral visible */
+.tienda-table .virtual-flow > .scroll-bar:horizontal {
+    -fx-opacity: 0;
+    -fx-pref-height: 0;
+    -fx-max-height: 0;
+}
+
+/* Esquinas limpias */
+.tienda-table .corner {
+    -fx-background-color: transparent;
+}
+
+/* =========================================================
+ 🔘 BOTONES
+========================================================= */
+
+.tienda-button-primary {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-background-radius: 8;
+    -fx-padding: 8 16;
+    -fx-cursor: hand;
+}
+.tienda-button-primary:hover {
+    -fx-background-color: #2980b9;
+}
+
+.tienda-button-success {
+    -fx-background-color: #27ae60;
+    -fx-text-fill: white;
+    -fx-background-radius: 8;
+    -fx-padding: 8 16;
+}
+.tienda-button-success:hover {
+    -fx-background-color: #2ecc71;
+}
+
+.tienda-button-warning {
+    -fx-background-color: #f39c12;
+    -fx-text-fill: white;
+    -fx-background-radius: 8;
+    -fx-padding: 8 16;
+}
+.tienda-button-warning:hover {
+    -fx-background-color: #e67e22;
+}
+
+.tienda-button-danger {
+    -fx-background-color: #e74c3c;
+    -fx-text-fill: white;
+    -fx-background-radius: 8;
+    -fx-padding: 8 16;
+}
+.tienda-button-danger:hover {
+    -fx-background-color: #c0392b;
+}
+
+.tienda-button-secondary {
+    -fx-background-color: #bdc3c7;
+    -fx-text-fill: #2c3e50;
+    -fx-background-radius: 8;
+    -fx-padding: 8 16;
+}
+.tienda-button-secondary:hover {
+    -fx-background-color: #d0d5d8;
+}
+
+/* =========================================================
+ 💬 MENSAJES Y TEXTOS
+========================================================= */
+
+.tienda-message {
+    -fx-font-size: 14px;
+    -fx-text-fill: #555;
+}

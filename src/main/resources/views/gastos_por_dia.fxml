@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="gastosDiaRoot" prefHeight="889.0" prefWidth="899.0" styleClass="gastos-dia-root" stylesheets="@../styles/gastos_por_dia.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.GastosPorDiaController">
+
+    <!-- 🔹 CABECERA -->
+    <HBox fx:id="headerGastosDia" alignment="CENTER_LEFT" spacing="10.0" styleClass="gastos-dia-header" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0">
+        <ImageView fx:id="iconoGastosDia" fitHeight="40.0" fitWidth="40.0" preserveRatio="true" styleClass="gastos-dia-icon">
+            <image>
+                <Image url="@../iconos/monedero.png" />
+            </image>
+        </ImageView>
+        <Label fx:id="labelTituloGastosDia" styleClass="gastos-dia-title" text="Reporte de Gastos por Día" />
+    </HBox>
+
+    <!-- 🔹 SEPARADOR SUPERIOR -->
+    <Separator fx:id="separatorTopGastosDia" layoutX="12.0" layoutY="87.0" prefWidth="860.0" styleClass="gastos-dia-separator" />
+
+    <!-- 🔹 DESCRIPCIÓN -->
+    <Text fx:id="textoDescripcionGastosDia" layoutX="20.0" layoutY="120.0" styleClass="gastos-dia-description" text="Aquí puedes consultar el gasto diario por usuario. Si la vista SQL no existe en la base de datos, puedes crearla con el botón de abajo o cargar los datos ya generados." wrappingWidth="860.0" />
+
+    <!-- 🔹 FILTROS -->
+    <HBox fx:id="filtrosGastosDia" alignment="CENTER_LEFT" layoutX="20.0" layoutY="151.0" prefHeight="47.0" prefWidth="621.0" spacing="15.0" styleClass="gastos-dia-filters">
+        <Text fx:id="labelFiltrarDia" styleClass="gastos-dia-filter-label" text="Día de la semana:" />
+        <ComboBox fx:id="comboDiasGastosDia" prefHeight="25.0" prefWidth="200.0" promptText="Seleccionar día..." styleClass="gastos-dia-combo" />
+        <Text fx:id="labelFiltrarUsuarioDia" styleClass="gastos-dia-filter-label" text="Usuario:" />
+        <ComboBox fx:id="comboUsuariosGastosDia" prefHeight="25.0" prefWidth="200.0" promptText="Seleccionar usuario..." styleClass="gastos-dia-combo" />
+    </HBox>
+
+    <!-- 🔹 SEPARADOR MEDIO -->
+    <Separator fx:id="separatorMiddleGastosDia" layoutX="15.0" layoutY="210.0" prefWidth="860.0" styleClass="gastos-dia-separator" />
+
+    <!-- 🔹 BOTONES SUPERIORES -->
+    <HBox fx:id="accionesGastosDia" alignment="CENTER_LEFT" layoutX="20.0" layoutY="231.0" spacing="10.0" styleClass="gastos-dia-actions">
+        <Button fx:id="btnCrearVistaGastosDia" styleClass="gastos-dia-button-primary" text="Crear vista de gastos diarios" />
+        <Button fx:id="btnCargarVistaGastosDia" styleClass="gastos-dia-button-secondary" text="Cargar datos de la vista diaria" />
+        <Button fx:id="btnRefescarGastosDia" onAction="#refrescarDatos" styleClass="gastos-dia-button-success" text="Refrescar datos" />
+      <Button fx:id="btnImprimirGastosDia1" styleClass="gastos-dia-button-success" text="Imprimir gastos diarios" />
+    </HBox>
+
+    <!-- 🔹 ESTADO -->
+    <Label fx:id="labelEstadoGastosDia" layoutX="20.0" layoutY="276.0" prefHeight="25.0" prefWidth="609.0" styleClass="gastos-dia-status" text="" />
+
+    <!-- 🔹 SEPARADOR INFERIOR -->
+    <Separator fx:id="separatorMiddleGastosDia1" layoutX="14.0" layoutY="311.0" prefWidth="860.0" styleClass="gastos-dia-separator" />
+
+    <!-- 🔹 TABLA DE RESULTADOS -->
+    <TableView fx:id="tablaGastosDiarios" layoutX="14.0" layoutY="350.0" prefHeight="370.0" prefWidth="860.0" styleClass="gastos-dia-table">
+        <columns>
+            <TableColumn fx:id="colGastosUsuarioDia" prefWidth="200.0" styleClass="gastos-dia-col" text="Usuario" />
+            <TableColumn fx:id="colGastosAnioDia" prefWidth="120.0" styleClass="gastos-dia-col" text="Año" />
+            <TableColumn fx:id="colGastosMesDia" prefWidth="100.0" styleClass="gastos-dia-col" text="Mes" />
+            <TableColumn fx:id="colGastosDiaSemana" prefWidth="220.0" styleClass="gastos-dia-col" text="Día de la Semana" />
+            <TableColumn fx:id="colGastosMontoDia" prefWidth="220.0" styleClass="gastos-dia-col" text="Gasto Diario (€)" />
+        </columns>
+    </TableView>
+
+    <!-- 🔹 INFORMACIÓN DE REGISTROS -->
+    <Label fx:id="labelRegistrosGastosDia" alignment="CENTER" layoutX="247.0" layoutY="737.0" prefHeight="47.0" prefWidth="395.0" styleClass="gastos-dia-info" text="Registros cargados: 0" />
+
+    <!-- 🔹 BOTÓN VOLVER -->
+    <HBox fx:id="volverDashboardGastosDia" alignment="CENTER" layoutX="1.0" layoutY="712.0" styleClass="gastos-dia-footer" AnchorPane.bottomAnchor="28.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="-1.0">
+        <Button fx:id="btnVolverDashboardGastosDia" onAction="#accion_volver_al_dashboard" styleClass="gastos-dia-button-exit" text="Volver al Dashboard" />
+    </HBox>
+
+</AnchorPane>

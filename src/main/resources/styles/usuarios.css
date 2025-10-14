@@ -1,0 +1,226 @@
+/* =========================================================
+ 🎨 ESTILOS GENERALES DE LA VISTA USUARIOS
+========================================================= */
+
+/* 🧱 Fondo general de la vista */
+.usuario-root {
+    -fx-background-color: #f9f9f9;
+    -fx-font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* =========================================================
+ 🏷️ CABECERA Y TÍTULOS
+========================================================= */
+
+.usuario-title {
+    -fx-font-size: 26px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #000000;
+}
+
+.usuario-user {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2980b9;
+}
+
+/* =========================================================
+ 📋 ETIQUETAS Y CAMPOS DE TEXTO
+========================================================= */
+
+.usuario-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #2c3e50;
+}
+
+.usuario-input {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-padding: 6 10;
+    -fx-font-size: 14px;
+}
+.usuario-input:focused {
+    -fx-border-color: #2980b9;
+    -fx-effect: dropshadow(gaussian, rgba(41,128,185,0.25), 5, 0, 0, 1);
+}
+
+/* =========================================================
+ 🧩 CAMPOS INTERACTIVOS (Combobox, Buscador)
+========================================================= */
+
+.usuario-combo {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-padding: 4 10;
+    -fx-cursor: hand;
+}
+.usuario-combo:focused {
+    -fx-border-color: #2980b9;
+    -fx-effect: dropshadow(gaussian, rgba(41,128,185,0.25), 5, 0, 0, 1);
+}
+
+/* 🔍 Campo de búsqueda */
+.usuario-search {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-font-size: 14px;
+    -fx-padding: 6 10;
+    -fx-cursor: text;
+}
+
+/* =========================================================
+ 📦 TABLA DE USUARIOS
+========================================================= */
+
+.usuario-table {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #dddddd;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-padding: 0;
+    -fx-table-cell-border-color: #eeeeee;
+    -fx-table-header-border-color: #cccccc;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 6, 0, 0, 2);
+}
+
+/* Cabecera */
+.usuario-table .column-header-background {
+    -fx-background-color: linear-gradient(to bottom, #f4f4f4, #eaeaea);
+    -fx-background-radius: 8 8 0 0;
+    -fx-border-radius: 8 8 0 0;
+}
+
+.usuario-table .column-header,
+.usuario-table .filler {
+    -fx-size: 40px;
+    -fx-border-color: transparent transparent #cccccc transparent;
+    -fx-alignment: CENTER;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-text-fill: #2c3e50;
+    -fx-padding: 8 0;
+}
+
+/* Celdas */
+.usuario-table .table-cell {
+    -fx-alignment: CENTER;
+    -fx-text-fill: #000000;
+    -fx-font-size: 14px;
+    -fx-padding: 6 0;
+    -fx-background-color: transparent;
+}
+
+/* Filas alternas */
+.usuario-table .table-row-cell:odd {
+    -fx-background-color: #fafafa;
+}
+.usuario-table .table-row-cell:even {
+    -fx-background-color: #ffffff;
+}
+
+/* Hover fila */
+.usuario-table .table-row-cell:hover {
+    -fx-background-color: #ecf6ff;
+    -fx-cursor: hand;
+}
+
+/* Fila seleccionada */
+.usuario-table .table-row-cell:filled:selected {
+    -fx-background-color: #d0e6ff;
+    -fx-text-fill: #000;
+    -fx-cursor: hand;
+}
+
+/* Quitar scroll lateral visible */
+.usuario-table .virtual-flow > .scroll-bar:horizontal {
+    -fx-opacity: 0;
+    -fx-pref-height: 0;
+    -fx-max-height: 0;
+}
+
+/* Esquinas limpias */
+.usuario-table .corner {
+    -fx-background-color: transparent;
+}
+
+/* =========================================================
+ 📩 MENSAJES DE ESTADO
+========================================================= */
+
+.usuario-message {
+    -fx-font-size: 14px;
+    -fx-text-fill: #555;
+}
+
+/* =========================================================
+ 🔘 BOTONES DE ACCIÓN
+========================================================= */
+
+.usuario-button-primary,
+.usuario-button-success,
+.usuario-button-warning,
+.usuario-button-danger,
+.usuario-button-secondary {
+    -fx-font-size: 14px;
+    -fx-background-radius: 8;
+    -fx-padding: 8 16;
+    -fx-cursor: hand;
+}
+
+/* Botón azul */
+.usuario-button-primary {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+}
+.usuario-button-primary:hover {
+    -fx-background-color: #2980b9;
+}
+
+/* Botón verde */
+.usuario-button-success {
+    -fx-background-color: #27ae60;
+    -fx-text-fill: white;
+}
+.usuario-button-success:hover {
+    -fx-background-color: #2ecc71;
+}
+
+/* Botón amarillo */
+.usuario-button-warning {
+    -fx-background-color: #f39c12;
+    -fx-text-fill: white;
+}
+.usuario-button-warning:hover {
+    -fx-background-color: #e67e22;
+}
+
+/* Botón rojo */
+.usuario-button-danger {
+    -fx-background-color: #e74c3c;
+    -fx-text-fill: white;
+}
+.usuario-button-danger:hover {
+    -fx-background-color: #c0392b;
+}
+
+/* Botón gris */
+.usuario-button-secondary {
+    -fx-background-color: #bdc3c7;
+    -fx-text-fill: #2c3e50;
+}
+.usuario-button-secondary:hover {
+    -fx-background-color: #d0d5d8;
+}
+.usuario-listview {
+    -fx-border-color: #dcdcdc;
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+    -fx-padding: 6;
+    -fx-background-color: #ffffff;
+}

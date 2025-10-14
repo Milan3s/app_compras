@@ -1,0 +1,285 @@
+/* =========================================================
+ 🎨 ESTILOS GENERALES DE LA VISTA LISTADO DE COMPRAS
+========================================================= */
+
+/* 🧱 Fondo general */
+.listado-compra-root {
+    -fx-background-color: #f9f9f9;
+    -fx-font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* =========================================================
+ 🏷️ CABECERA Y TÍTULOS
+========================================================= */
+
+.listado-compra-title {
+    -fx-font-size: 26px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #000000;
+}
+
+.listado-compra-user {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2980b9;
+}
+
+/* =========================================================
+ 🔍 CAMPO DE BÚSQUEDA
+========================================================= */
+
+.listado-compra-search {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-font-size: 14px;
+    -fx-padding: 6 10;
+    -fx-cursor: text;
+}
+
+.listado-compra-search:focused {
+    -fx-border-color: #2980b9;
+    -fx-effect: dropshadow(gaussian, rgba(41,128,185,0.25), 5, 0, 0, 1);
+}
+
+/* =========================================================
+ 📋 TABLA DE COMPRAS
+========================================================= */
+
+.listado-compra-table {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #dddddd;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-padding: 0;
+    -fx-table-cell-border-color: #eeeeee;
+    -fx-table-header-border-color: #cccccc;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 6, 0, 0, 2);
+}
+
+/* Cabecera */
+.listado-compra-table .column-header-background {
+    -fx-background-color: linear-gradient(to bottom, #f4f4f4, #eaeaea);
+    -fx-background-radius: 8 8 0 0;
+    -fx-border-radius: 8 8 0 0;
+}
+
+.listado-compra-table .column-header,
+.listado-compra-table .filler {
+    -fx-size: 40px;
+    -fx-border-color: transparent transparent #cccccc transparent;
+    -fx-alignment: CENTER;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-text-fill: #2c3e50;
+    -fx-padding: 8 0;
+}
+
+/* Celdas */
+.listado-compra-table .table-cell {
+    -fx-alignment: CENTER;
+    -fx-text-fill: #000000;
+    -fx-font-size: 14px;
+    -fx-padding: 6 0;
+    -fx-background-color: transparent;
+}
+
+/* Filas alternas */
+.listado-compra-table .table-row-cell:odd {
+    -fx-background-color: #fafafa;
+}
+.listado-compra-table .table-row-cell:even {
+    -fx-background-color: #ffffff;
+}
+
+/* Hover fila */
+.listado-compra-table .table-row-cell:hover {
+    -fx-background-color: #ecf6ff;
+    -fx-cursor: hand;
+}
+
+/* Fila seleccionada */
+.listado-compra-table .table-row-cell:filled:selected {
+    -fx-background-color: #d0e6ff;
+    -fx-text-fill: #000;
+    -fx-cursor: hand;
+}
+
+/* Quitar scroll lateral visible */
+.listado-compra-table .virtual-flow > .scroll-bar:horizontal {
+    -fx-opacity: 0;
+    -fx-pref-height: 0;
+    -fx-max-height: 0;
+}
+
+/* Esquinas limpias */
+.listado-compra-table .corner {
+    -fx-background-color: transparent;
+}
+
+/* =========================================================
+ 💬 MENSAJE
+========================================================= */
+
+.listado-compra-message {
+    -fx-font-size: 14px;
+    -fx-text-fill: #555;
+}
+
+/* =========================================================
+ 🏷️ LABELS Y FILTROS
+========================================================= */
+
+.listado-compra-label {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+}
+
+.listado-compra-total {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2980b9;
+}
+
+/* =========================================================
+ ⬇️ COMBOBOX (Selector de usuario)
+========================================================= */
+
+.listado-compra-combo {
+    -fx-background-color: white;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-font-size: 14px;
+    -fx-padding: 4 8;
+    -fx-cursor: hand;
+}
+
+/* Cursor tipo "mano" en todo el área del ComboBox */
+.listado-compra-combo,
+.listado-compra-combo > .arrow-button,
+.listado-compra-combo > .text-field,
+.listado-compra-combo > .list-cell {
+    -fx-cursor: hand;
+}
+
+/* =========================================================
+ CURSOR MANO EN EL DESPLEGABLE DEL COMBOBOX
+========================================================= */
+
+/* Cambia el cursor a "hand" cuando pasas por encima de las opciones */
+.combo-box-popup .list-view .list-cell {
+    -fx-cursor: hand;
+}
+
+/* Opcional: mejora visual en hover */
+.combo-box-popup .list-view .list-cell:hover {
+    -fx-background-color: #ecf6ff; /* azul clarito */
+    -fx-text-fill: #000000;
+}
+
+
+.listado-compra-combo:hover {
+    -fx-border-color: #2980b9;
+}
+
+.listado-compra-combo:focused {
+    -fx-border-color: #2980b9;
+    -fx-effect: dropshadow(gaussian, rgba(41,128,185,0.25), 5, 0, 0, 1);
+}
+
+/* Popup del ComboBox */
+.list-view {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #cccccc;
+    -fx-font-size: 13px;
+}
+
+.list-cell:hover {
+    -fx-background-color: #ecf6ff;
+    -fx-text-fill: #000000;
+}
+
+/* =========================================================
+ 🔘 BOTONES DE ACCIÓN
+========================================================= */
+
+.listado-compra-button-primary,
+.listado-compra-button-success,
+.listado-compra-button-warning,
+.listado-compra-button-danger,
+.listado-compra-button-secondary {
+    -fx-font-size: 14px;
+    -fx-background-radius: 8;
+    -fx-padding: 8 16;
+    -fx-cursor: hand;
+}
+
+/* Azul principal */
+.listado-compra-button-primary {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+}
+.listado-compra-button-primary:hover {
+    -fx-background-color: #2980b9;
+}
+
+/* Verde */
+.listado-compra-button-success {
+    -fx-background-color: #27ae60;
+    -fx-text-fill: white;
+}
+.listado-compra-button-success:hover {
+    -fx-background-color: #2ecc71;
+}
+
+/* Amarillo */
+.listado-compra-button-warning {
+    -fx-background-color: #f39c12;
+    -fx-text-fill: white;
+}
+.listado-compra-button-warning:hover {
+    -fx-background-color: #e67e22;
+}
+
+/* Rojo */
+.listado-compra-button-danger {
+    -fx-background-color: #e74c3c;
+    -fx-text-fill: white;
+}
+.listado-compra-button-danger:hover {
+    -fx-background-color: #c0392b;
+}
+
+/* Gris */
+.listado-compra-button-secondary {
+    -fx-background-color: #bdc3c7;
+    -fx-text-fill: #2c3e50;
+}
+.listado-compra-button-secondary:hover {
+    -fx-background-color: #d0d5d8;
+}
+
+/* =========================================================
+ 🎨 FILAS DE TABLA (GENÉRICO)
+========================================================= */
+
+.table-row-cell:odd {
+    -fx-background-color: #fafafa;
+}
+
+.table-row-cell:even {
+    -fx-background-color: #ffffff;
+}
+
+.table-row-cell:hover {
+    -fx-background-color: #ecf6ff;
+    -fx-cursor: hand;
+}
+
+.table-row-cell:filled:selected {
+    -fx-background-color: #d0e6ff;
+    -fx-text-fill: black;
+}

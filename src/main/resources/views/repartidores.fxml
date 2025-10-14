@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane fx:id="repartidoresRoot" prefHeight="980.0" prefWidth="920.0" styleClass="repartidores-root" stylesheets="@../styles/repartidores.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.RepartidorController">
+
+    <!-- 🔹 Encabezado centrado con VBox -->
+    <VBox fx:id="headerRepartidores" alignment="CENTER" spacing="5.0" layoutY="20.0" prefWidth="899.0" styleClass="repartidor-header" AnchorPane.topAnchor="20.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+        <Label fx:id="labelTituloRepartidores" text="Gestión de Repartidores" styleClass="repartidor-title" />
+        <Label fx:id="labelUsuarioActivo" text="Usuario" styleClass="repartidor-user" />
+    </VBox>
+
+    <!-- 🔹 Formulario -->
+    <Label fx:id="labelNombre" layoutX="279.0" layoutY="114.0" styleClass="repartidor-label" text="Nombre:" />
+    <TextField fx:id="txtNombre" layoutX="389.0" layoutY="109.0" prefWidth="300.0" promptText="Nombre del repartidor" styleClass="repartidor-input" />
+
+    <Label fx:id="labelContacto" layoutX="279.0" layoutY="154.0" styleClass="repartidor-label" text="Contacto:" />
+    <TextField fx:id="txtContacto" layoutX="389.0" layoutY="149.0" prefWidth="300.0" promptText="Persona de contacto" styleClass="repartidor-input" />
+
+    <Label fx:id="labelTelefono" layoutX="279.0" layoutY="194.0" styleClass="repartidor-label" text="Teléfono:" />
+    <TextField fx:id="txtTelefono" layoutX="389.0" layoutY="189.0" prefWidth="300.0" promptText="Número de teléfono" styleClass="repartidor-input" />
+
+    <Label fx:id="labelEmail" layoutX="279.0" layoutY="234.0" styleClass="repartidor-label" text="Email:" />
+    <TextField fx:id="txtEmail" layoutX="389.0" layoutY="229.0" prefWidth="300.0" promptText="Correo electrónico" styleClass="repartidor-input" />
+
+    <Label fx:id="labelDireccion" layoutX="279.0" layoutY="274.0" styleClass="repartidor-label" text="Dirección:" />
+    <TextField fx:id="txtDireccion" layoutX="389.0" layoutY="269.0" prefWidth="300.0" promptText="Dirección completa" styleClass="repartidor-input" />
+
+    <Label fx:id="labelWeb" layoutX="279.0" layoutY="314.0" styleClass="repartidor-label" text="Sitio Web:" />
+    <TextField fx:id="txtSitioWeb" layoutX="389.0" layoutY="309.0" prefWidth="300.0" promptText="URL del sitio web" styleClass="repartidor-input" />
+
+    <!-- 🔹 Botones CRUD -->
+    <HBox fx:id="hboxBotonesCRUD" layoutX="324.0" layoutY="360.0" spacing="10.0">
+        <children>
+            <Button fx:id="btnAgregar" onAction="#agregarRepartidor" styleClass="repartidor-button-success" text="Agregar" />
+            <Button fx:id="btnActualizar" onAction="#actualizarRepartidor" styleClass="repartidor-button-warning" text="Actualizar" />
+            <Button fx:id="btnEliminar" onAction="#eliminarRepartidor" styleClass="repartidor-button-danger" text="Eliminar" />
+            <Button fx:id="btnLimpiar" onAction="#limpiarFormulario" styleClass="repartidor-button-secondary" text="Limpiar" />
+        </children>
+    </HBox>
+
+    <!-- 🔍 Buscador -->
+    <TextField fx:id="txtBuscarRepartidor" layoutX="50.0" layoutY="430.0" prefHeight="38.0" prefWidth="817.0" promptText="Buscar repartidores" styleClass="repartidor-search" />
+
+    <!-- 📋 Tabla de repartidores -->
+    <TableView fx:id="tablaRepartidores" layoutX="50.0" layoutY="489.0" prefHeight="383.0" prefWidth="817.0" styleClass="repartidor-table">
+        <columns>
+            <TableColumn fx:id="colId" prefWidth="60.0" styleClass="repartidor-table-col" text="ID" />
+            <TableColumn fx:id="colNombre" prefWidth="140.0" styleClass="repartidor-table-col" text="Nombre" />
+            <TableColumn fx:id="colContacto" prefWidth="120.0" styleClass="repartidor-table-col" text="Contacto" />
+            <TableColumn fx:id="colTelefono" prefWidth="100.0" styleClass="repartidor-table-col" text="Teléfono" />
+            <TableColumn fx:id="colEmail" prefWidth="140.0" styleClass="repartidor-table-col" text="Email" />
+            <TableColumn fx:id="colDireccion" prefWidth="160.0" styleClass="repartidor-table-col" text="Dirección" />
+            <TableColumn fx:id="colWeb" prefWidth="97.0" styleClass="repartidor-table-col" text="Sitio Web" />
+        </columns>
+    </TableView>
+
+    <!-- 💬 Mensaje -->
+    <Label fx:id="labelMensaje" alignment="CENTER" layoutX="254.0" layoutY="885.0" prefHeight="38.0" prefWidth="484.0" styleClass="repartidor-message" text="" />
+
+    <!-- ↩️ Botón volver -->
+    <Button fx:id="btnVolver" layoutX="406.0" layoutY="935.0" onAction="#volverDashboard" styleClass="repartidor-button-primary" text="Volver al Dashboard" />
+
+</AnchorPane>

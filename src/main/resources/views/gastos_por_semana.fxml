@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="gastosSemanaRoot" prefHeight="889.0" prefWidth="899.0" styleClass="gastos-semana-root" stylesheets="@../styles/gastos_por_semana.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.GastosPorSemanaController">
+
+    <!-- CABECERA -->
+    <HBox fx:id="headerGastosSemana" alignment="CENTER" spacing="10.0" styleClass="gastos-semana-header" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0">
+        <children>
+            <ImageView fx:id="iconoGastosSemana" fitHeight="40.0" fitWidth="40.0" preserveRatio="true" styleClass="gastos-semana-icon">
+                <image>
+                    <Image url="@../iconos/monedero.png" />
+                </image>
+            </ImageView>
+            <Label fx:id="labelTituloGastosSemana" styleClass="gastos-semana-title" text="Reporte de Gastos por Semana" />
+        </children>
+    </HBox>
+
+    <!-- SEPARADOR -->
+    <Separator fx:id="separatorTopGastosSemana" layoutX="12.0" layoutY="87.0" prefWidth="860.0" styleClass="gastos-semana-separator" />
+
+    <!-- DESCRIPCIÓN -->
+    <Text fx:id="textoDescripcionGastosSemana" layoutX="20.0" layoutY="120.0" styleClass="gastos-semana-description" text="Aquí puedes consultar el gasto semanal por usuario. Si la vista SQL no existe en la base de datos, puedes crearla con el botón de abajo o cargar los datos ya generados." wrappingWidth="860.0" />
+
+    <!-- FILTROS: SEMANA + USUARIO -->
+    <HBox fx:id="filtrosGastosSemana" alignment="CENTER_LEFT" layoutX="20.0" layoutY="151.0" prefHeight="47.0" prefWidth="544.0" spacing="15.0" styleClass="gastos-semana-filters">
+        <children>
+            <Text fx:id="labelFiltrarSemana" styleClass="gastos-semana-filter-label" text="Filtrar por semana:" />
+            <TextField fx:id="txtSemanaGastos" prefHeight="25.0" prefWidth="120.0" promptText="1, 2, 3, 4" styleClass="gastos-semana-input" />
+
+            <Text fx:id="labelFiltrarUsuario" styleClass="gastos-semana-filter-label" text="Usuario:" />
+            <ComboBox fx:id="comboUsuariosGastos" prefHeight="25.0" prefWidth="200.0" promptText="Todos los usuarios" styleClass="gastos-semana-combo" />
+        </children>
+    </HBox>
+
+    <!-- SEPARADOR 2 -->
+    <Separator fx:id="separatorMiddleGastosSemana" layoutX="15.0" layoutY="210.0" prefWidth="860.0" styleClass="gastos-semana-separator" />
+
+    <!-- BOTONES SUPERIORES -->
+    <HBox fx:id="accionesGastosSemana" alignment="CENTER_LEFT" layoutX="20.0" layoutY="231.0" spacing="10.0" styleClass="gastos-semana-actions">
+        <children>
+            <Button fx:id="btnCrearVistaGastos" styleClass="gastos-semana-button-primary" text="Crear vista de gastos semanales" />
+
+            <Button fx:id="btnCargarVistaGastos" styleClass="gastos-semana-button-secondary" text="Cargar datos de la vista semanal" />
+
+            <Button fx:id="btnRefrescarDatosGastosSemana" onAction="#accion_RefrescarDatosGastosSemana" styleClass="gastos-semana-button-success" text="Refrescar Datos" />
+         <Button fx:id="btnImprimirGastosSemana1" styleClass="gastos-semana-button-success" text="Imprimir gastos" />
+        </children>
+    </HBox>
+
+    <!-- LABEL DE ESTADO -->
+    <Label fx:id="labelEstadoGastosSemana" layoutX="20.0" layoutY="276.0" prefHeight="25.0" prefWidth="609.0" styleClass="gastos-semana-status" text="" />
+
+    <!-- SEPARADOR INTERMEDIO -->
+    <Separator fx:id="separatorMiddleGastosSemana1" layoutX="14.0" layoutY="311.0" prefWidth="860.0" styleClass="gastos-semana-separator" />
+
+    <!-- TABLA DE RESULTADOS -->
+    <TableView fx:id="tablaGastosSemana" layoutX="14.0" layoutY="350.0" prefHeight="370.0" prefWidth="860.0" styleClass="gastos-semana-table">
+        <columns>
+            <TableColumn fx:id="colGastosUsuario" prefWidth="128.0" styleClass="gastos-semana-col" text="Usuario" />
+            <TableColumn fx:id="colGastosAnio" prefWidth="118.0" styleClass="gastos-semana-col" text="Año" />
+            <TableColumn fx:id="colGastosMes" prefWidth="87.0" styleClass="gastos-semana-col" text="Mes" />
+            <TableColumn fx:id="colGastosSemana" prefWidth="140.0" styleClass="gastos-semana-col" text="Semana del Mes" />
+            <TableColumn fx:id="colGastosInicio" prefWidth="111.0" styleClass="gastos-semana-col" text="Inicio Semana" />
+            <TableColumn fx:id="colGastosFin" prefWidth="121.0" styleClass="gastos-semana-col" text="Fin Semana" />
+            <TableColumn fx:id="colGastosTotal" prefWidth="154.0" styleClass="gastos-semana-col" text="Gasto Semanal (€)" />
+        </columns>
+    </TableView>
+
+    <!-- INFORMACIÓN DE REGISTROS -->
+    <Label fx:id="labelRegistrosGastosSemana" alignment="CENTER" layoutX="247.0" layoutY="737.0" prefHeight="47.0" prefWidth="395.0" styleClass="gastos-semana-info" text="Registros cargados: 0" />
+
+    <!-- BOTÓN VOLVER -->
+    <HBox fx:id="volverDashboardGastosSemana" alignment="CENTER" layoutX="1.0" layoutY="712.0" styleClass="gastos-semana-footer" AnchorPane.bottomAnchor="28.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="-1.0">
+        <children>
+            <Button fx:id="btnVolverDashboardGastosSemana" onAction="#accion_volver_al_dashboard" styleClass="gastos-semana-button-exit" text="Volver al Dashboard" />
+        </children>
+    </HBox>
+
+</AnchorPane>

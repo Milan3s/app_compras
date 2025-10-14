@@ -1,0 +1,208 @@
+/* =========================================================
+ 🎨 ESTILOS GENERALES DE LA VISTA DE CATEGORÍAS
+========================================================= */
+
+/* 🧱 Fondo general */
+.categorias-root {
+    -fx-background-color: #f9f9f9;
+    -fx-font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* =========================================================
+ 🏷️ CABECERA Y TÍTULOS
+========================================================= */
+
+.categoria-title {
+    -fx-font-size: 26px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #000000;
+}
+
+.categoria-user {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2980b9;
+}
+
+/* =========================================================
+ 📋 ETIQUETAS Y CAMPOS DE TEXTO
+========================================================= */
+
+.categoria-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #2c3e50;
+}
+
+/* Campos de entrada */
+.categoria-input {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-padding: 4 10;
+    -fx-font-size: 14px;
+}
+
+.categoria-input:focused {
+    -fx-border-color: #2980b9;
+    -fx-effect: dropshadow(gaussian, rgba(41,128,185,0.25), 5, 0, 0, 1);
+}
+
+/* =========================================================
+ 🔍 CAMPO DE BÚSQUEDA
+========================================================= */
+
+.categoria-search {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-font-size: 14px;
+    -fx-padding: 6 10;
+    -fx-cursor: text;
+}
+
+/* =========================================================
+ 📦 TABLA DE CATEGORÍAS
+========================================================= */
+
+.categoria-table {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #dddddd;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-padding: 0;
+    -fx-table-cell-border-color: #eeeeee;
+    -fx-table-header-border-color: #cccccc;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 6, 0, 0, 2);
+}
+
+/* Cabecera */
+.categoria-table .column-header-background {
+    -fx-background-color: linear-gradient(to bottom, #f4f4f4, #eaeaea);
+    -fx-background-radius: 8 8 0 0;
+    -fx-border-radius: 8 8 0 0;
+}
+
+.categoria-table .column-header,
+.categoria-table .filler {
+    -fx-size: 40px;
+    -fx-border-color: transparent transparent #cccccc transparent;
+    -fx-alignment: CENTER;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-text-fill: #2c3e50;
+    -fx-padding: 8 0;
+}
+
+/* ✅ Centrar contenido de todas las celdas */
+.categoria-table .table-cell {
+    -fx-alignment: CENTER;
+    -fx-text-fill: #000000;
+    -fx-font-size: 14px;
+    -fx-padding: 6 0;
+    -fx-background-color: transparent;
+}
+
+/* Filas alternas */
+.categoria-table .table-row-cell:odd {
+    -fx-background-color: #fafafa;
+}
+.categoria-table .table-row-cell:even {
+    -fx-background-color: #ffffff;
+}
+
+/* Hover fila */
+.categoria-table .table-row-cell:hover {
+    -fx-background-color: #ecf6ff;
+    -fx-cursor: hand;
+}
+
+/* Fila seleccionada */
+.categoria-table .table-row-cell:filled:selected {
+    -fx-background-color: #d0e6ff;
+    -fx-text-fill: #000;
+    -fx-cursor: hand;
+}
+
+/* Quitar scroll lateral visible */
+.categoria-table .virtual-flow > .scroll-bar:horizontal {
+    -fx-opacity: 0;
+    -fx-pref-height: 0;
+    -fx-max-height: 0;
+}
+
+/* Esquinas limpias */
+.categoria-table .corner {
+    -fx-background-color: transparent;
+}
+
+
+/* =========================================================
+ 💬 MENSAJE
+========================================================= */
+
+.categoria-message {
+    -fx-font-size: 14px;
+    -fx-text-fill: #555;
+}
+
+/* =========================================================
+ 🔘 BOTONES DE ACCIÓN (con cursor: hand)
+========================================================= */
+
+.categoria-button-primary,
+.categoria-button-success,
+.categoria-button-warning,
+.categoria-button-danger,
+.categoria-button-secondary {
+    -fx-font-size: 14px;
+    -fx-background-radius: 8;
+    -fx-padding: 8 16;
+    -fx-cursor: hand;
+}
+
+/* Botón azul */
+.categoria-button-primary {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+}
+.categoria-button-primary:hover {
+    -fx-background-color: #2980b9;
+}
+
+/* Botón verde */
+.categoria-button-success {
+    -fx-background-color: #27ae60;
+    -fx-text-fill: white;
+}
+.categoria-button-success:hover {
+    -fx-background-color: #2ecc71;
+}
+
+/* Botón amarillo */
+.categoria-button-warning {
+    -fx-background-color: #f39c12;
+    -fx-text-fill: white;
+}
+.categoria-button-warning:hover {
+    -fx-background-color: #e67e22;
+}
+
+/* Botón rojo */
+.categoria-button-danger {
+    -fx-background-color: #e74c3c;
+    -fx-text-fill: white;
+}
+.categoria-button-danger:hover {
+    -fx-background-color: #c0392b;
+}
+
+/* Botón gris */
+.categoria-button-secondary {
+    -fx-background-color: #bdc3c7;
+    -fx-text-fill: #2c3e50;
+}
+.categoria-button-secondary:hover {
+    -fx-background-color: #d0d5d8;
+}

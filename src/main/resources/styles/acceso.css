@@ -1,0 +1,182 @@
+/* 🎨 Fondo general del login */
+.login-root {
+    -fx-background-color: #f9f9f9;
+    -fx-font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* 🏷️ Título principal */
+.login-title {
+    -fx-font-size: 26px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #000000;
+}
+
+/* 💬 Subtítulo descriptivo */
+.login-subtitle {
+    -fx-font-size: 15px;
+    -fx-font-style: italic;
+    -fx-text-fill: #333333;
+}
+
+/* 🔹 Separador */
+.login-separator {
+    -fx-background-color: #ccc;
+    -fx-opacity: 0.4;
+}
+
+/* 🔄 Estado de conexión */
+.login-status {
+    -fx-font-size: 13px;
+    -fx-text-fill: #444444;
+}
+
+/* 🧍 Etiquetas de campos */
+.login-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #000000;
+}
+
+/* ✏️ Campos de texto */
+.login-input {
+    -fx-background-color: #ffffff;
+    -fx-text-fill: #000000;
+    -fx-font-size: 14px;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-padding: 6 10;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.05), 3, 0, 0, 1);
+}
+
+.login-input:focused {
+    -fx-border-color: #2980b9;
+    -fx-effect: dropshadow(gaussian, rgba(41, 128, 185, 0.3), 6, 0, 0, 2);
+}
+
+/* 🔘 Botón principal */
+.login-button {
+    -fx-font-size: 14px;
+    -fx-background-color: #2980b9;
+    -fx-text-fill: #ffffff;
+    -fx-background-radius: 8;
+    -fx-padding: 8 20;
+    -fx-cursor: hand;
+}
+
+.login-button:hover {
+    -fx-background-color: #3498db;
+}
+
+/* 🔘 Botón secundario */
+.login-button-secondary {
+    -fx-font-size: 13px;
+    -fx-background-color: #bdc3c7;
+    -fx-text-fill: #2c3e50;
+    -fx-background-radius: 8;
+    -fx-padding: 6 16;
+    -fx-cursor: hand;
+}
+
+.login-button-secondary:hover {
+    -fx-background-color: #d0d5d8;
+}
+
+/* 📨 Mensaje inferior */
+.login-message {
+    -fx-font-size: 14px;
+    -fx-text-fill: #222222;
+}
+
+
+/* ========================================================= */
+/* 🎨 ESTILOS DEL REGISTRO DE USUARIO                        */
+/* ========================================================= */
+
+/* 🌿 Fondo general del registro */
+.registro-root {
+    -fx-background-color: #f9f9f9;
+    -fx-font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* 🏷️ Título principal */
+.registro-title {
+    -fx-font-size: 26px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #000000;
+}
+
+/* 💬 Subtítulo descriptivo */
+.registro-subtitle {
+    -fx-font-size: 15px;
+    -fx-font-style: italic;
+    -fx-text-fill: #333333;
+}
+
+/* 🔹 Separador */
+.registro-separator {
+    -fx-background-color: #ccc;
+    -fx-opacity: 0.4;
+}
+
+/* 🔄 Estado de conexión */
+.registro-status {
+    -fx-font-size: 13px;
+    -fx-text-fill: #444444;
+}
+
+/* 🧾 Etiquetas de campos */
+.registro-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #000000;
+}
+
+/* ✏️ Campos de entrada */
+.registro-input {
+    -fx-background-color: #ffffff;
+    -fx-text-fill: #000000;
+    -fx-font-size: 14px;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-padding: 6 10;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.05), 3, 0, 0, 1);
+}
+
+.registro-input:focused {
+    -fx-border-color: #27ae60;
+    -fx-effect: dropshadow(gaussian, rgba(39, 174, 96, 0.3), 6, 0, 0, 2);
+}
+
+/* 🔘 Botón principal (Registrar) */
+.registro-button {
+    -fx-font-size: 14px;
+    -fx-background-color: #27ae60;
+    -fx-text-fill: #ffffff;
+    -fx-background-radius: 8;
+    -fx-padding: 8 20;
+    -fx-cursor: hand;
+}
+
+.registro-button:hover {
+    -fx-background-color: #2ecc71;
+}
+
+/* 🔘 Botón secundario (Volver) */
+.registro-button-secondary {
+    -fx-font-size: 13px;
+    -fx-background-color: #bdc3c7;
+    -fx-text-fill: #2c3e50;
+    -fx-background-radius: 8;
+    -fx-padding: 6 16;
+    -fx-cursor: hand;
+}
+
+.registro-button-secondary:hover {
+    -fx-background-color: #d0d5d8;
+}
+
+/* 📨 Mensaje inferior */
+.registro-message {
+    -fx-font-size: 14px;
+    -fx-text-fill: #222222;
+}

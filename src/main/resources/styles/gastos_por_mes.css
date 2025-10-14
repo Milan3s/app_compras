@@ -1,0 +1,250 @@
+/* =========================================================
+ 🎨 ESTILOS GENERALES DE LA VISTA GASTOS POR MES
+========================================================= */
+
+/* 🧱 Fondo general */
+.gastos-mes-root {
+    -fx-background-color: #f9f9f9;
+    -fx-font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* =========================================================
+ 🏷️ CABECERA Y TÍTULOS
+========================================================= */
+
+.gastos-mes-header {
+    -fx-padding: 10 0;
+}
+
+.gastos-mes-icon {
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 4, 0, 0, 1);
+}
+
+.gastos-mes-title {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #000000;
+}
+
+/* =========================================================
+ 📝 DESCRIPCIÓN Y SEPARADORES
+========================================================= */
+
+.gastos-mes-description {
+    -fx-font-size: 14px;
+    -fx-text-fill: #333333;
+}
+
+.gastos-mes-separator {
+    -fx-background-color: #dcdcdc;
+    -fx-padding: 2 0 2 0;
+}
+
+/* =========================================================
+ 🔍 FILTROS Y CAMPOS
+========================================================= */
+
+.gastos-mes-filters {
+    -fx-spacing: 15;
+}
+
+.gastos-mes-filter-label {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+}
+
+.gastos-mes-input {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-font-size: 14px;
+    -fx-padding: 6 10;
+}
+
+.gastos-mes-input:focused {
+    -fx-border-color: #2980b9;
+    -fx-effect: dropshadow(gaussian, rgba(41,128,185,0.25), 5, 0, 0, 1);
+}
+
+.gastos-mes-combo {
+    -fx-background-color: white;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-font-size: 14px;
+    -fx-padding: 4 8;
+    -fx-cursor: hand;
+}
+
+.gastos-mes-combo:hover {
+    -fx-border-color: #2980b9;
+}
+
+.gastos-mes-combo:focused {
+    -fx-border-color: #2980b9;
+    -fx-effect: dropshadow(gaussian, rgba(41,128,185,0.25), 5, 0, 0, 1);
+}
+
+/* Popup del ComboBox */
+.list-view {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #cccccc;
+    -fx-font-size: 13px;
+}
+
+.list-cell:hover {
+    -fx-background-color: #ecf6ff;
+    -fx-text-fill: #000000;
+}
+
+/* =========================================================
+ 🔘 BOTONES DE ACCIÓN
+========================================================= */
+
+.gastos-mes-actions {
+    -fx-spacing: 10;
+}
+
+/* Estilo base para botones */
+.gastos-mes-button-primary,
+.gastos-mes-button-secondary,
+.gastos-mes-button-success,
+.gastos-mes-button-exit {
+    -fx-font-size: 14px;
+    -fx-background-radius: 8;
+    -fx-padding: 8 16;
+    -fx-cursor: hand;
+}
+
+/* Azul (crear vista) */
+.gastos-mes-button-primary {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+}
+.gastos-mes-button-primary:hover {
+    -fx-background-color: #2980b9;
+}
+
+/* Celeste (cargar datos) */
+.gastos-mes-button-secondary {
+    -fx-background-color: #17a2b8;
+    -fx-text-fill: white;
+}
+.gastos-mes-button-secondary:hover {
+    -fx-background-color: #138496;
+}
+
+/* Verde (imprimir) */
+.gastos-mes-button-success {
+    -fx-background-color: #28a745;
+    -fx-text-fill: white;
+}
+.gastos-mes-button-success:hover {
+    -fx-background-color: #218838;
+}
+
+/* Gris (volver al dashboard) */
+.gastos-mes-button-exit {
+    -fx-background-color: #999999;
+    -fx-text-fill: white;
+}
+.gastos-mes-button-exit:hover {
+    -fx-background-color: #7f8c8d;
+}
+
+/* Estado textual */
+.gastos-mes-status {
+    -fx-font-size: 13px;
+    -fx-text-fill: #006600;
+    -fx-padding: 4 10;
+}
+
+/* =========================================================
+ 📊 TABLA DE GASTOS
+========================================================= */
+
+.gastos-mes-table {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #dddddd;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-padding: 0;
+    -fx-table-cell-border-color: #eeeeee;
+    -fx-table-header-border-color: #cccccc;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 6, 0, 0, 2);
+}
+
+/* Cabecera */
+.gastos-mes-table .column-header-background {
+    -fx-background-color: linear-gradient(to bottom, #f4f4f4, #eaeaea);
+    -fx-background-radius: 8 8 0 0;
+    -fx-border-radius: 8 8 0 0;
+}
+
+.gastos-mes-table .column-header,
+.gastos-mes-table .filler {
+    -fx-size: 40px;
+    -fx-border-color: transparent transparent #cccccc transparent;
+    -fx-alignment: CENTER;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-text-fill: #2c3e50;
+    -fx-padding: 8 0;
+}
+
+/* Celdas */
+.gastos-mes-table .table-cell {
+    -fx-alignment: CENTER;
+    -fx-text-fill: #000000;
+    -fx-font-size: 14px;
+    -fx-padding: 6 0;
+    -fx-background-color: transparent;
+}
+
+/* Filas alternas */
+.gastos-mes-table .table-row-cell:odd {
+    -fx-background-color: #fafafa;
+}
+.gastos-mes-table .table-row-cell:even {
+    -fx-background-color: #ffffff;
+}
+
+/* Hover fila */
+.gastos-mes-table .table-row-cell:hover {
+    -fx-background-color: #ecf6ff;
+    -fx-cursor: hand;
+}
+
+/* Fila seleccionada */
+.gastos-mes-table .table-row-cell:filled:selected {
+    -fx-background-color: #d0e6ff;
+    -fx-text-fill: #000;
+    -fx-cursor: hand;
+}
+
+/* Quitar scroll lateral visible */
+.gastos-mes-table .virtual-flow > .scroll-bar:horizontal {
+    -fx-opacity: 0;
+    -fx-pref-height: 0;
+    -fx-max-height: 0;
+}
+
+/* Esquinas limpias */
+.gastos-mes-table .corner {
+    -fx-background-color: transparent;
+}
+
+/* =========================================================
+ 💬 INFORMACIÓN Y PIE
+========================================================= */
+
+.gastos-mes-info {
+    -fx-font-size: 14px;
+    -fx-text-fill: #555;
+}
+
+.gastos-mes-footer {
+    -fx-padding: 10 0 0 0;
+}

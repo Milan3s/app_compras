@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="gastosMesRoot" prefHeight="889.0" prefWidth="896.0" styleClass="gastos-mes-root" stylesheets="@../styles/gastos_por_mes.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.GastosPorMesController">
+    <HBox fx:id="headerGastosMes" alignment="CENTER" spacing="10.0" styleClass="gastos-mes-header" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0">
+        <children>
+            <ImageView fx:id="iconoGastosMes" fitHeight="40.0" fitWidth="40.0" preserveRatio="true" styleClass="gastos-mes-icon">
+                <image>
+                    <Image url="@../iconos/monedero.png" />
+                </image>
+            </ImageView>
+            <Label fx:id="labelTituloGastosMes" styleClass="gastos-mes-title" text="Reporte de Gastos por Mes" />
+        </children>
+    </HBox>
+    <Separator fx:id="separatorTopGastosMes" layoutX="12.0" layoutY="87.0" prefWidth="860.0" styleClass="gastos-mes-separator" />
+    <Text fx:id="textoDescripcionGastosMes" layoutX="20.0" layoutY="120.0" styleClass="gastos-mes-description" text="Aquí puedes consultar el gasto mensual por usuario y categoría. Si la vista SQL no existe en la base de datos, puedes crearla con el botón de abajo o cargar los datos ya generados." wrappingWidth="860.0" />
+    <HBox fx:id="filtrosGastosMes" alignment="CENTER_LEFT" layoutX="20.0" layoutY="151.0" prefHeight="47.0" prefWidth="644.0" spacing="15.0" styleClass="gastos-mes-filters">
+        <children>
+            <Text fx:id="labelFiltrarMes" styleClass="gastos-mes-filter-label" text="Filtrar por mes:" />
+            <ComboBox fx:id="comboMesesGastosMes" prefHeight="38.0" prefWidth="197.0" promptText="Selecciona mes" styleClass="gastos-mes-combo" />
+            <Text fx:id="labelFiltrarUsuarioMes" styleClass="gastos-mes-filter-label" text="Usuario:" />
+            <ComboBox fx:id="comboUsuariosGastosMes" prefHeight="25.0" prefWidth="200.0" promptText="Todos los usuarios" styleClass="gastos-mes-combo" />
+        </children>
+    </HBox>
+    <Separator fx:id="separatorMiddleGastosMes" layoutX="15.0" layoutY="210.0" prefWidth="860.0" styleClass="gastos-mes-separator" />
+    <HBox fx:id="accionesGastosMes" alignment="CENTER_LEFT" layoutX="20.0" layoutY="231.0" spacing="10.0" styleClass="gastos-mes-actions">
+        <children>
+            <Button fx:id="btnCrearVistaGastosMes" styleClass="gastos-mes-button-primary" text="Crear vista de gastos mensuales" />
+            <Button fx:id="btnCargarVistaGastosMes" styleClass="gastos-mes-button-secondary" text="Cargar datos de la vista mensual" />
+            <Button fx:id="btnRefrescarDatosGastosMes" onAction="#accion_RefrescarDatosGastosMes" styleClass="gastos-mes-button-success" text="Refrescar datos " />
+         <Button fx:id="btnImprimirGastosMes1" styleClass="gastos-mes-button-success" text="Imprimir gastos mensuales" />
+        </children>
+    </HBox>
+    <Label fx:id="labelEstadoGastosMes" layoutX="20.0" layoutY="276.0" prefHeight="25.0" prefWidth="609.0" styleClass="gastos-mes-status" text="" />
+    <Separator fx:id="separatorMiddleGastosMes1" layoutX="14.0" layoutY="311.0" prefWidth="860.0" styleClass="gastos-mes-separator" />
+    <TableView fx:id="tablaGastosMensuales" layoutX="14.0" layoutY="350.0" prefHeight="370.0" prefWidth="860.0" styleClass="gastos-mes-table">
+        <columns>
+            <TableColumn fx:id="colGastosUsuarioMes" prefWidth="150.0" styleClass="gastos-mes-col" text="Usuario" />
+            <TableColumn fx:id="colGastosAnioMes" prefWidth="120.0" styleClass="gastos-mes-col" text="Año" />
+            <TableColumn fx:id="colGastosMesNombre" prefWidth="120.0" styleClass="gastos-mes-col" text="Mes" />
+            <TableColumn fx:id="colGastosCategoria" prefWidth="240.0" styleClass="gastos-mes-col" text="Categoría" />
+            <TableColumn fx:id="colGastosTotal" prefWidth="230.0" styleClass="gastos-mes-col" text="Gasto Total (€)" />
+        </columns>
+    </TableView>
+    <Label fx:id="labelRegistrosGastosMes" alignment="CENTER" layoutX="247.0" layoutY="737.0" prefHeight="47.0" prefWidth="395.0" styleClass="gastos-mes-info" text="Registros cargados: 0" />
+    <HBox fx:id="volverDashboardGastosMes" alignment="CENTER" layoutX="1.0" layoutY="712.0" styleClass="gastos-mes-footer" AnchorPane.bottomAnchor="28.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="-1.0">
+        <children>
+            <Button fx:id="btnVolverDashboardGastosMes" onAction="#accion_volver_al_dashboard" styleClass="gastos-mes-button-exit" text="Volver al Dashboard" />
+        </children>
+    </HBox>
+</AnchorPane>
