@@ -62,7 +62,7 @@ Importante , como el github no me deja subir archivos mas pesados de 200MB compa
 2. Escribe:
 
    ```bash
-   git clone https://github.com/Milan3s/raids-and-clips.git
+   git clone https://github.com/Milan3s/app_compras.git
    ```
 3. Abre NetBeans → **File > Open Project** → selecciona la carpeta clonada.
 
@@ -80,12 +80,12 @@ Importante , como el github no me deja subir archivos mas pesados de 200MB compa
 4. Crea la base de datos:
 
    ```
-   raids_and_clips
+   app_compras
    ```
 5. Menú **Importar** → selecciona el archivo SQL del proyecto:
 
    ```
-   ./database/raids_and_clips.sql
+   ./database/app_compras.sql
    ```
 6. Pulsa **Continuar**.
 
@@ -224,7 +224,7 @@ exit
 Al terminar la instalación, tu carpeta debe quedar así:
 
 ```
-C:\Program Files\Jars JavaFX\raids_and_clips\
+C:\Program Files\Jars JavaFX\app_compras\
 │
 ├── app_compras.jar      (JAR principal renombrado)
 ├── app_compras.bat      (archivo para ejecutar la app)
@@ -237,7 +237,7 @@ C:\Program Files\Jars JavaFX\raids_and_clips\
 └── (otros archivos generados en target/)
 ```
 
-* El `.jar` **siempre debe llamarse** `raids_and_clips.jar`.
+* El `.jar` **siempre debe llamarse** `app_compras.jar`.
 * El `.bat` **siempre debe estar en la misma carpeta que el `.jar`**.
 * Los demás directorios (`classes`, etc.) también son necesarios.
 
