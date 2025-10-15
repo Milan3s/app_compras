@@ -1,5 +1,5 @@
 
-# 🎮 Raids and Clips
+# 💫🛒💎 Aplicación de Compras 💎🛒💫
 
 Aplicación de escritorio desarrollada en **Java + JavaFX**, con **MySQL** como base de datos y estilos en **CSS**.
 Este README está pensado para que cualquier usuario, incluso sin experiencia, pueda instalar y ejecutar el proyecto correctamente.
@@ -9,8 +9,6 @@ Este README está pensado para que cualquier usuario, incluso sin experiencia, p
 ## 📦 Requisitos previos
 
 Importante , como el github no me deja subir archivos mas pesados de 200MB comparto el drive de los recursos para hacer funcionar las aplicaciones Java FX :  
-
-👉 [📂 Enlace a recursos en Google Drive](https://drive.google.com/drive/u/0/folders/1Ohg2pPctoHHeIcJg0N4FlschER5sc1bO)
 
 👉 [🌍 Página de proyectos y descargas](https://dmilanes.es/proyectos)
 
@@ -133,16 +131,16 @@ Importante , como el github no me deja subir archivos mas pesados de 200MB compa
 2. El compilado se genera en:
 
    ```
-   C:\Users\Milanes\Documents\NetBeansProjects\raids_and_clips\target
+   C:\Users\Milanes\Documents\NetBeansProjects\app_compras\target
    ```
 
 3. Crea una carpeta en Archivos de Programa para la aplicación:
 
    ```
-   C:\Program Files\Jars JavaFX\raids_and_clips\
+   C:\Program Files\Jars JavaFX\app_compras\
    ```
 
-4. Copia **todo el contenido de `target/`** dentro de `raids_and_clips\`.
+4. Copia **todo el contenido de `target/`** dentro de `app_compras\`.
    Esto incluye:
 
    * El archivo `.jar` generado.
@@ -151,17 +149,17 @@ Importante , como el github no me deja subir archivos mas pesados de 200MB compa
 5. Renombra el `.jar` principal a:
 
    ```
-   raids_and_clips.jar
+   app_compras.jar
    ```
 
 ---
 
 ## ▶️ Crear y configurar el archivo .BAT
 
-1. Dentro de `C:\Program Files\Jars JavaFX\raids_and_clips\`, crea un archivo llamado:
+1. Dentro de `C:\Program Files\Jars JavaFX\app_compras\`, crea un archivo llamado:
 
    ```
-   raids_and_clips.bat
+   app_compras.bat
    ```
 
 2. Pega este contenido:
@@ -178,12 +176,12 @@ REM --- Lanzar la aplicación ----
 start "" "C:\Program Files\Java\jdk-24\bin\javaw.exe" ^
 --module-path "C:\Program Files\Java\javafx-sdk-24.0.2\lib" ^
 --add-modules javafx.controls,javafx.fxml ^
--jar "raids_and_clips.jar"
+-jar "app_compras.jar"
 
 exit
 ```
 
-3. Para ejecutar la aplicación, haz **doble clic en `raids_and_clips.bat`**.
+3. Para ejecutar la aplicación, haz **doble clic en `app_compras.bat`**.
 
 ---
 
@@ -216,7 +214,7 @@ exit
 * **Si renombraste el JAR**, asegúrate que coincida aquí:
 
   ```
-  -jar "raids_and_clips.jar"
+  -jar "app_compras.jar"
   ```
 
 ---
@@ -228,8 +226,8 @@ Al terminar la instalación, tu carpeta debe quedar así:
 ```
 C:\Program Files\Jars JavaFX\raids_and_clips\
 │
-├── raids_and_clips.jar      (JAR principal renombrado)
-├── raids_and_clips.bat      (archivo para ejecutar la app)
+├── app_compras.jar      (JAR principal renombrado)
+├── app_compras.bat      (archivo para ejecutar la app)
 │
 ├── classes\                 (copiado desde target/)
 ├── generated-sources\       (copiado desde target/)
